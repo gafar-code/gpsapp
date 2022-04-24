@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882063922110",
+    "project_id": "gpsapp-ac0a5",
+    "storage_bucket": "gpsapp-ac0a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882063922110:android:523d81616de680756e1fef",
+        "android_client_info": {
+          "package_name": "com.gp.gpsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882063922110-r6pmlp283nt9t0dcos9qa6rn91n36rk3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUyLJY_6DZ-2otFf6xXbUySL71bi_0IWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882063922110-r6pmlp283nt9t0dcos9qa6rn91n36rk3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
