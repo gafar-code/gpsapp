@@ -12,6 +12,10 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const DASBOARD = _Paths.DASBOARD;
   static const BOTTOMNAVBAR = _Paths.BOTTOMNAVBAR;
+  static const MAPS = _Paths.MAPS;
+  static const MARKET = _Paths.MARKET;
+  static const PROFILE = _Paths.PROFILE;
+  static const SETTINGS = _Paths.SETTINGS;
 }
 
 abstract class _Paths {
@@ -21,4 +25,8 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const DASBOARD = '/dasboard';
   static const BOTTOMNAVBAR = '/bottomnavbar';
+  static const MAPS = '/maps';
+  static const MARKET = '/market';
+  static const PROFILE = '/profile';
+  static const SETTINGS = '/settings';
 }

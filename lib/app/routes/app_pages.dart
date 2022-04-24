@@ -1,9 +1,6 @@
 import 'package:flutter/animation.dart';
 
 import 'package:get/get.dart';
-
-import 'package:gpsapp/app/modules/bottomnavbar/bindings/bottomnavbar_binding.dart';
-import 'package:gpsapp/app/modules/bottomnavbar/views/bottomnavbar_view.dart';
 import 'package:gpsapp/app/modules/home/bindings/home_binding.dart';
 import 'package:gpsapp/app/modules/home/views/home_view.dart';
 import 'package:gpsapp/app/modules/login/bindings/login_binding.dart';
@@ -45,10 +42,5 @@ class AppPages {
         page: () => SplashView(),
         binding: SplashBinding(),
         curve: Curves.fastOutSlowIn),
-    GetPage(
-      name: _Paths.BOTTOMNAVBAR,
-      page: () => BottomnavbarView(),
-      binding: BottomnavbarBinding(),
-    ),
   ];
 }

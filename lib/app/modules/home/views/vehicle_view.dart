@@ -1,39 +1,46 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:gpsapp/app/modules/home/controllers/vehiclecontroller.dart';
 import 'package:gpsapp/app/styles/colors.dart';
 
-class VehicleView extends GetView {
+class VehicleView extends GetView<VehicleController> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 150,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.zero,
-          shrinkWrap: true,
-          children: [
-            _vehicle(),
-            _vehicle(),
-            _vehicle(),
-            _vehicle(),
-          ],
-        ),
-      ),
+    Get.put(VehicleController());
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      width: MediaQuery.of(context).size.width,
+      height: 150,
+      child: FutureBuilder<QuerySnapshot<Object?>>(
+          future: controller.getData(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              List<QueryDocumentSnapshot<Object?>> listAllDocs =
+                  snapshot.data!.docs;
+              return ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  itemCount: listAllDocs.length,
+                  itemBuilder: ((context, index) {
+                    return _vehicle((listAllDocs[index].data() as Map)["name"]);
+                  }));
+            }
+            return Center(child: CircularProgressIndicator());
+          }),
     );
   }
 
-  Align _vehicle() {
+  Align _vehicle(String title) {
     return Align(
       child: Container(
-        margin: EdgeInsets.only(right: 10),
+        margin: EdgeInsets.only(right: 10, left: 10),
         height: 130,
         width: 100,
         decoration: BoxDecoration(
-            boxShadow: [],
+            border: Border.all(color: black),
             color: black2,
             borderRadius: BorderRadius.circular(12)),
         child: Column(
@@ -44,7 +51,7 @@ class VehicleView extends GetView {
                 margin: EdgeInsets.symmetric(vertical: 15),
                 child: CircleAvatar(backgroundColor: white)),
             Text(
-              "Vario",
+              title,
               style: TextStyle(color: Colors.white, fontSize: 18),
             ),
             SizedBox(height: 5),
