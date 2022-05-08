@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:gpsapp/app/modules/home/controllers/vehiclecontroller.dart';
+import 'package:gpsapp/app/controllers/vehicle_controller.dart';
 import 'package:gpsapp/app/styles/colors.dart';
 
 class VehicleView extends GetView<VehicleController> {
@@ -40,7 +40,7 @@ class VehicleView extends GetView<VehicleController> {
         height: 130,
         width: 100,
         decoration: BoxDecoration(
-            border: Border.all(color: black),
+            border: Border.all(color: grey.withOpacity(0.2)),
             color: black2,
             borderRadius: BorderRadius.circular(12)),
         child: Column(

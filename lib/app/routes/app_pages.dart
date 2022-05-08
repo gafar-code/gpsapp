@@ -1,10 +1,15 @@
 import 'package:flutter/animation.dart';
 
 import 'package:get/get.dart';
+
 import 'package:gpsapp/app/modules/home/bindings/home_binding.dart';
 import 'package:gpsapp/app/modules/home/views/home_view.dart';
 import 'package:gpsapp/app/modules/login/bindings/login_binding.dart';
 import 'package:gpsapp/app/modules/login/views/login_view.dart';
+import 'package:gpsapp/app/modules/maps/bindings/maps_binding.dart';
+import 'package:gpsapp/app/modules/maps/views/maps_view.dart';
+import 'package:gpsapp/app/modules/navigationbar/bindings/navigationbar_binding.dart';
+import 'package:gpsapp/app/modules/navigationbar/views/navigationbar_view.dart';
 import 'package:gpsapp/app/modules/signup/bindings/signup_binding.dart';
 import 'package:gpsapp/app/modules/signup/views/signup_view.dart';
 import 'package:gpsapp/app/modules/splash/bindings/splash_binding.dart';
@@ -42,5 +47,15 @@ class AppPages {
         page: () => SplashView(),
         binding: SplashBinding(),
         curve: Curves.fastOutSlowIn),
+    GetPage(
+      name: _Paths.NAVIGATIONBAR,
+      page: () => NavigationbarView(),
+      binding: NavigationbarBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAPS,
+      page: () => MapsView(),
+      binding: MapsBinding(),
+    ),
   ];
 }

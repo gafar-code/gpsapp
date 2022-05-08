@@ -15,7 +15,7 @@ class AuthController extends GetxController {
       var user = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
       print(user);
-      Get.offAllNamed(Routes.HOME);
+      Get.offAllNamed(Routes.NAVIGATIONBAR);
     } on FirebaseAuthException catch (e) {
       Get.back(closeOverlays: true);
       if (e.code == 'user-not-found') {

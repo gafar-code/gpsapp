@@ -38,7 +38,8 @@ class MyApp extends StatelessWidget {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               title: "GpsApp",
-              initialRoute: snapshot.data != null ? Routes.HOME : Routes.LOGIN,
+              initialRoute:
+                  snapshot.data != null ? Routes.NAVIGATIONBAR : Routes.LOGIN,
               getPages: AppPages.routes,
             );
           }
