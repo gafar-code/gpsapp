@@ -5,13 +5,16 @@ import 'package:gpsapp/app/models/vehicle.dart';
 
 class VehicleController extends GetxController {
   RxList<Vehicle> listOfVehicle = [
-    Vehicle("Vario", "S275MZ", 75, LatLng(-7.472613, 112.667542), "jalan"),
-    Vehicle("Berio", "S275MZ", 75, LatLng(-7.472613, 112.667542), "berhenti"),
-    Vehicle("Vario", "S275MZ", 75, LatLng(-7.472613, 112.667542), "jalan"),
+    Vehicle(
+        "1gf53", "Vario", "S275MZ", 75, LatLng(-7.472613, 112.667542), "jalan"),
+    Vehicle("ad610", "Berio", "S275MZ", 75, LatLng(-7.472613, 110.667542),
+        "berhenti"),
+    Vehicle(
+        "eg420", "Vario", "S275MZ", 75, LatLng(-7.472613, 115.667542), "jalan"),
   ].obs;
-  var currentVehicle =
-      Vehicle("Vario", "S275MZ", 75, LatLng(-7.472613, 112.667542), "jalan")
-          .obs;
+  var currentVehicle = Vehicle("1gf53", "Vario", "S275MZ", 75,
+          LatLng(-7.472613, 130.667542), "jalan")
+      .obs;
 
   void getAllVehicle() {
     // selalu di pantau setiap ada perubahan data pada database
