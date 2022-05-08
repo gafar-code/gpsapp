@@ -10,6 +10,8 @@ import 'package:gpsapp/app/modules/maps/bindings/maps_binding.dart';
 import 'package:gpsapp/app/modules/maps/views/maps_view.dart';
 import 'package:gpsapp/app/modules/navigationbar/bindings/navigationbar_binding.dart';
 import 'package:gpsapp/app/modules/navigationbar/views/navigationbar_view.dart';
+import 'package:gpsapp/app/modules/profile/bindings/profile_binding.dart';
+import 'package:gpsapp/app/modules/profile/views/profile_view.dart';
 import 'package:gpsapp/app/modules/signup/bindings/signup_binding.dart';
 import 'package:gpsapp/app/modules/signup/views/signup_view.dart';
 import 'package:gpsapp/app/modules/splash/bindings/splash_binding.dart';
@@ -24,24 +26,22 @@ class AppPages {
 
   static const HOME = Routes.HOME;
   static const LOGIN = Routes.LOGIN;
+  static const PROFILE = Routes.PROFILE;
 
   static final routes = [
-    GetPage(
-        name: _Paths.HOME,
-        page: () => HomeView(),
-        binding: HomeBinding(),
-        curve: Curves.fastOutSlowIn),
+    GetPage(name: _Paths.HOME, page: () => HomeView(), binding: HomeBinding()),
     GetPage(
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
-        name: _Paths.SIGNUP,
-        page: () => SignupView(),
-        binding: SignupBinding(),
-        transition: Transition.rightToLeft,
-        curve: Curves.fastOutSlowIn),
+      name: _Paths.SIGNUP,
+      page: () => SignupView(),
+      binding: SignupBinding(),
+      transition: Transition.rightToLeft,
+      curve: Curves.fastOutSlowIn,
+    ),
     GetPage(
         name: _Paths.SPLASH,
         page: () => SplashView(),
@@ -56,6 +56,13 @@ class AppPages {
       name: _Paths.MAPS,
       page: () => MapsView(),
       binding: MapsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
+      transition: Transition.cupertino,
+      curve: Curves.slowMiddle,
     ),
   ];
 }

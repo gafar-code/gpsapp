@@ -11,7 +11,7 @@ class NavigationbarView extends GetView<NavigationbarController> {
     return Scaffold(
       body: Navigator(
         key: Get.nestedKey(1),
-        initialRoute: '/maps',
+        initialRoute: '/home',
         onGenerateRoute: controller.onGenerateRoute,
       ),
       bottomNavigationBar: Obx(

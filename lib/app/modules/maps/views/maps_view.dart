@@ -16,6 +16,7 @@ class MapsView extends GetView<MapsController> {
         Obx(
           // google map
           () => GoogleMap(
+            padding: EdgeInsets.symmetric(vertical: 120),
             markers: controller.markers,
             mapType: MapType.normal,
             zoomControlsEnabled: false,

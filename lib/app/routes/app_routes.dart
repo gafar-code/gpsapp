@@ -12,6 +12,7 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const NAVIGATIONBAR = _Paths.NAVIGATIONBAR;
   static const MAPS = _Paths.MAPS;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const NAVIGATIONBAR = '/navigationbar';
   static const MAPS = '/maps';
+  static const PROFILE = '/profile';
 }

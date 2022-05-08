@@ -41,8 +41,8 @@ class MapsController extends GetxController {
         markerId: MarkerId(_vehicleC.listOfVehicle[i].id),
         position: _vehicleC.listOfVehicle[i].location,
         infoWindow: InfoWindow(
-          title: 'My Custom Title ',
-          snippet: 'My Custom Subtitle',
+          title: _vehicleC.listOfVehicle[i].name,
+          snippet: _vehicleC.listOfVehicle[i].platNumb,
         ),
         icon: BitmapDescriptor.defaultMarker, //Icon for Marker
       ));

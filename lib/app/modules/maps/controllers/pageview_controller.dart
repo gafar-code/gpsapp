@@ -12,6 +12,7 @@ class PageViewController extends GetxController {
     _vehicleC
         .chooseVehicle(value); // merubah currentVehicle saat berpindah halaman
     currentIndex.value = value;
+    _mapsC.zoomToCurrentVehicle(); // melakukan zoom ke kendaraan yang terpilih
   }
 
   void nextPage() {

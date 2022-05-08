@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:gpsapp/app/controllers/auth_controller.dart';
 import 'package:gpsapp/app/modules/home/views/notification_view.dart';
 import 'package:gpsapp/app/modules/home/views/vehicle_view.dart';
+import 'package:gpsapp/app/routes/app_pages.dart';
 import 'package:gpsapp/app/styles/colors.dart';
 
 import '../controllers/home_controller.dart';
@@ -62,7 +63,7 @@ class HomeView extends GetView<HomeController> {
                             )),
                         SizedBox(width: 20),
                         GestureDetector(
-                          onTap: _auth.logout,
+                          onTap: () => Get.toNamed(AppPages.PROFILE),
                           child: CircleAvatar(
                             radius: 16,
                             backgroundColor: gold,

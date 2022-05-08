@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.active) {
             return GetMaterialApp(
+              defaultTransition: Transition.cupertino,
               debugShowCheckedModeBanner: false,
               title: "GpsApp",
               initialRoute:

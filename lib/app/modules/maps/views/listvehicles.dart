@@ -23,6 +23,7 @@ class ListVehicle extends GetView<PageViewController> {
                 height: 140,
                 width: MediaQuery.of(context).size.width - 160,
                 child: PageView(
+                  physics: BouncingScrollPhysics(),
                   controller: controller.pageController.value,
                   onPageChanged: controller.pageChange,
                   scrollDirection: Axis.horizontal,
