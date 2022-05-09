@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:gpsapp/app/styles/colors.dart';
@@ -29,7 +30,23 @@ class MapsView extends GetView<MapsController> {
         Obx(
             // jika map belum di buat akan menampilkan circularprogres
             () => !controller.isLoaded.value
-                ? Center(child: CircularProgressIndicator())
+                ? Container(
+                    color: black,
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    child: Center(
+                        child: Stack(
+                      children: [
+                        SpinKitRipple(
+                          borderWidth: 15,
+                          color: gold,
+                          size: 200,
+                        ),
+                        SpinKitDoubleBounce(
+                          color: gold,
+                        ),
+                      ],
+                    )))
                 : Center()),
         StatsBar(),
         ListVehicle()

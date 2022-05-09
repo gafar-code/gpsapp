@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:get/get.dart';
 import 'package:gpsapp/app/modules/home/controllers/notification_controller.dart';
 import 'package:gpsapp/app/styles/colors.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:gpsapp/app/utils/dateformater.dart';
 
 class NotificationView extends GetView<NotificationController> {
@@ -19,7 +21,7 @@ class NotificationView extends GetView<NotificationController> {
           return ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              padding: EdgeInsets.only(bottom: 10),
+              padding: EdgeInsets.only(bottom: 10, top: 10),
               itemCount: listAllDocs.length,
               itemBuilder: (context, index) {
                 // vehicle
@@ -100,8 +102,64 @@ class NotificationView extends GetView<NotificationController> {
                 );
               });
         }
-        return Center(child: CircularProgressIndicator());
+        return Center(child: SpinKitThreeBounce(color: gold));
       }),
+    );
+  }
+
+  Shimmer _loading() {
+    return Shimmer.fromColors(
+      highlightColor: white,
+      baseColor: grey,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        padding: EdgeInsets.fromLTRB(0, 5, 20, 5),
+        decoration: BoxDecoration(
+            color: Colors.grey.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(4)),
+        child: Row(
+          children: [
+            Shimmer.fromColors(
+              highlightColor: white,
+              baseColor: grey,
+              child: Container(
+                margin: EdgeInsets.all(12),
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                    color: white, borderRadius: BorderRadius.circular(4)),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Shimmer.fromColors(
+                  highlightColor: white,
+                  baseColor: grey,
+                  child: Container(
+                    height: 20,
+                    width: 180,
+                    decoration: BoxDecoration(
+                        color: white, borderRadius: BorderRadius.circular(2)),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Shimmer.fromColors(
+                  highlightColor: white,
+                  baseColor: grey,
+                  child: Container(
+                    height: 14,
+                    width: 120,
+                    decoration: BoxDecoration(
+                        color: white, borderRadius: BorderRadius.circular(2)),
+                  ),
+                ),
+              ],
+            ),
+            Spacer(),
+          ],
+        ),
+      ),
     );
   }
 }

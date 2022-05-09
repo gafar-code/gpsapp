@@ -23,7 +23,6 @@ class MapsController extends GetxController {
     addMarker();
     await Future.delayed(Duration(seconds: 2));
     isLoaded.value = true;
-    update();
   }
 
   void zoomToCurrentVehicle() {

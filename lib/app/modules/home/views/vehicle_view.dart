@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:get/get.dart';
 import 'package:gpsapp/app/controllers/vehicle_controller.dart';
@@ -20,6 +21,7 @@ class VehicleView extends GetView<VehicleController> {
               List<QueryDocumentSnapshot<Object?>> listAllDocs =
                   snapshot.data!.docs;
               return ListView.builder(
+                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
@@ -28,7 +30,7 @@ class VehicleView extends GetView<VehicleController> {
                     return _vehicle((listAllDocs[index].data() as Map)["name"]);
                   }));
             }
-            return Center(child: CircularProgressIndicator());
+            return Center(child: SpinKitThreeBounce(color: gold));
           }),
     );
   }

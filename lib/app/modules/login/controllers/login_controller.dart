@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gpsapp/app/controllers/auth_controller.dart';
 import 'package:gpsapp/app/styles/colors.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoginController extends GetxController {
   Rx<bool> passwordVisible = false.obs;
@@ -40,9 +41,7 @@ class LoginController extends GetxController {
         backgroundColor: Colors.transparent,
         title: "",
         middleText: "",
-        content: CircularProgressIndicator(
-          color: gold,
-        ));
+        content: SpinKitThreeBounce(color: gold));
     var auth = Get.find<AuthController>();
     auth.signin(email, password);
     print("finish");
