@@ -13,6 +13,7 @@ abstract class Routes {
   static const NAVIGATIONBAR = _Paths.NAVIGATIONBAR;
   static const MAPS = _Paths.MAPS;
   static const PROFILE = _Paths.PROFILE;
+  static const DETAIL_VEHICLE = _Paths.DETAIL_VEHICLE;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const NAVIGATIONBAR = '/navigationbar';
   static const MAPS = '/maps';
   static const PROFILE = '/profile';
+  static const DETAIL_VEHICLE = '/detail-vehicle';
 }

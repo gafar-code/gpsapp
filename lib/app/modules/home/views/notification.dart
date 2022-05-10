@@ -4,6 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:get/get.dart';
 import 'package:gpsapp/app/modules/home/controllers/notification_controller.dart';
+import 'package:gpsapp/app/styles/boxshadow.dart';
 import 'package:gpsapp/app/styles/colors.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:gpsapp/app/utils/dateformater.dart';
@@ -50,26 +51,27 @@ class NotificationView extends GetView<NotificationController> {
                       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                       padding: EdgeInsets.fromLTRB(0, 5, 20, 5),
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              color: vehicle['type'] == "danger"
-                                  ? red.withOpacity(0.2)
-                                  : vehicle['type'] == "warning"
-                                      ? brown.withOpacity(0.2)
-                                      : green.withOpacity(0.2)),
+                          boxShadow: defaultBoxShadow,
+                          // border: Border.all(
+                          //     color: vehicle['type'] == "danger"
+                          //         ? red.withOpacity(0.2)
+                          //         : vehicle['type'] == "warning"
+                          //             ? brown.withOpacity(0.2)
+                          //             : green.withOpacity(0.2)),
                           color: black2,
                           borderRadius: BorderRadius.circular(12)),
                       child: Row(
                         children: [
                           Container(
-                            margin: EdgeInsets.all(12),
-                            height: 40,
-                            width: 40,
+                            margin: EdgeInsets.fromLTRB(20, 12, 12, 12),
+                            height: 60,
+                            width: 60,
                             decoration: BoxDecoration(
                                 color: vehicle['type'] == "danger"
-                                    ? red.withOpacity(0.2)
+                                    ? red
                                     : vehicle['type'] == "warning"
-                                        ? brown.withOpacity(0.2)
-                                        : green.withOpacity(0.2),
+                                        ? brown
+                                        : green,
                                 borderRadius: BorderRadius.circular(8)),
                             child: Icon(
                               vehicle['type'] == "danger"
@@ -77,7 +79,7 @@ class NotificationView extends GetView<NotificationController> {
                                   : vehicle['type'] == "warning"
                                       ? Icons.warning
                                       : Icons.health_and_safety,
-                              size: 18,
+                              size: 24,
                               color: white,
                             ),
                           ),
@@ -85,12 +87,23 @@ class NotificationView extends GetView<NotificationController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
+                                vehicle['type'],
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: vehicle['type'] == "danger"
+                                        ? red
+                                        : vehicle['type'] == "warning"
+                                            ? brown
+                                            : green),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
                                 vehicle['message'],
-                                style: TextStyle(color: white, fontSize: 20),
+                                style: TextStyle(color: white, fontSize: 14),
                               ),
                               SizedBox(height: 5),
                               Text(date + " jam yang lalu",
-                                  style: TextStyle(color: grey, fontSize: 14)),
+                                  style: TextStyle(color: grey, fontSize: 16)),
                             ],
                           ),
                           Spacer(),

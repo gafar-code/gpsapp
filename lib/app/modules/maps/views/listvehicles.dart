@@ -27,7 +27,7 @@ class ListVehicle extends GetView<PageViewController> {
                   controller: controller.pageController.value,
                   onPageChanged: controller.pageChange,
                   scrollDirection: Axis.horizontal,
-                  children: _vehicleFLoatList(_vehicleC.listOfVehicle),
+                  children: _vehicleFLoatItem(_vehicleC.listOfVehicle),
                 ),
               ),
             ),
@@ -73,7 +73,7 @@ class ListVehicle extends GetView<PageViewController> {
     );
   }
 
-  List<Widget> _vehicleFLoatList(List<Vehicle> list) {
+  List<Widget> _vehicleFLoatItem(List<Vehicle> list) {
     List<Widget> listVehicle = [];
     for (int i = 0; i < list.length; i++) {
       listVehicle.add(Center(
@@ -82,22 +82,29 @@ class ListVehicle extends GetView<PageViewController> {
           height: 70,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(60),
-            color: grey,
+            color: grey.withOpacity(0.3),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Spacer(flex: 2),
-              CircleAvatar(radius: 24),
+              CircleAvatar(
+                radius: 24,
+                backgroundColor: white,
+              ),
               Spacer(flex: 1),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
                     list[i].name,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold, color: gold),
                   ),
-                  Text(list[i].platNumb),
+                  Text(
+                    list[i].platNumb,
+                    style: TextStyle(color: white),
+                  ),
                 ],
               ),
               Spacer(flex: 4),

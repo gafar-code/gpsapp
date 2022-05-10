@@ -2,6 +2,8 @@ import 'package:flutter/animation.dart';
 
 import 'package:get/get.dart';
 
+import 'package:gpsapp/app/modules/detail_vehicle/bindings/detail_vehicle_binding.dart';
+import 'package:gpsapp/app/modules/detail_vehicle/views/detail_vehicle_view.dart';
 import 'package:gpsapp/app/modules/home/bindings/home_binding.dart';
 import 'package:gpsapp/app/modules/home/views/home_view.dart';
 import 'package:gpsapp/app/modules/login/bindings/login_binding.dart';
@@ -27,6 +29,7 @@ class AppPages {
   static const HOME = Routes.HOME;
   static const LOGIN = Routes.LOGIN;
   static const PROFILE = Routes.PROFILE;
+  static const DETAIL_VEHICLE = Routes.DETAIL_VEHICLE;
 
   static final routes = [
     GetPage(name: _Paths.HOME, page: () => HomeView(), binding: HomeBinding()),
@@ -63,6 +66,11 @@ class AppPages {
       binding: ProfileBinding(),
       transition: Transition.cupertino,
       curve: Curves.slowMiddle,
+    ),
+    GetPage(
+      name: _Paths.DETAIL_VEHICLE,
+      page: () => DetailVehicleView(),
+      binding: DetailVehicleBinding(),
     ),
   ];
 }

@@ -17,8 +17,8 @@ class StatsBar extends StatelessWidget {
           filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 120,
-            padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
+            height: 115,
+            padding: EdgeInsets.fromLTRB(20, 40, 20, 5),
             decoration:
                 BoxDecoration(color: Colors.grey.shade200.withOpacity(0.1)),
             child: Obx(

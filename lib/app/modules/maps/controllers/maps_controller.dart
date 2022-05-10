@@ -7,7 +7,7 @@ import 'package:gpsapp/app/styles/map.dart';
 
 class MapsController extends GetxController {
   late GoogleMapController _controller;
-  final _vehicleC = Get.find<VehicleController>();
+  final _vehicleC = Get.put(VehicleController()); // setelah ganti menjadi find
   var markers = <Marker>{}.obs;
   var isLoaded = false.obs;
   var initialPosition = CameraPosition(
